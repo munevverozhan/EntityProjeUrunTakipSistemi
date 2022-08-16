@@ -61,6 +61,12 @@
     <Compile Include="Forms\AnaForm.Designer.cs">
       <DependentUpon>AnaForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\frmIstatistik.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmIstatistik.Designer.cs">
+      <DependentUpon>frmIstatistik.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\frmKategori.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -104,6 +110,9 @@
     </Compile>
     <EmbeddedResource Include="Forms\AnaForm.resx">
       <DependentUpon>AnaForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmIstatistik.resx">
+      <DependentUpon>frmIstatistik.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmKategori.resx">
       <DependentUpon>frmKategori.cs</DependentUpon>

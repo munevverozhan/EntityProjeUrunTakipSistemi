@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using EntityProjeUrunTakipSistemi.Forms;
 
 namespace EntityProjeUrunTakipSistemi
 {
@@ -23,16 +24,18 @@ namespace EntityProjeUrunTakipSistemi
             frm.Show();
             this.Hide();
         }
-
-        private void AnaForm_Load(object sender, EventArgs e)
-        {
-
-        }
-
+   
         private void button2_Click(object sender, EventArgs e)
         {
             frmUrun urun = new frmUrun();
             urun.Show();
+            this.Hide();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            frmIstatistik frm = new frmIstatistik();
+            frm.Show();
             this.Hide();
         }
     }
