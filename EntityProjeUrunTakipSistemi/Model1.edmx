@@ -5,6 +5,14 @@
     <!-- SSDL content -->
     <edmx:StorageModels>
     <Schema Namespace="DBEntityUrunModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="tblAdmin">
+          <Key>
+            <PropertyRef Name="adminID" />
+          </Key>
+          <Property Name="adminID" Type="tinyint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="adminAdSoyad" Type="varchar" MaxLength="50" />
+          <Property Name="adminSifre" Type="varchar" MaxLength="50" />
+        </EntityType>
         <EntityType Name="tblKategori">
           <Key>
             <PropertyRef Name="categoryID" />
@@ -82,6 +90,7 @@
         </Association>
         <Function Name="MarkaGetir" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <EntityContainer Name="DBEntityUrunModelStoreContainer">
+          <EntitySet Name="tblAdmin" EntityType="Self.tblAdmin" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tblKategori" EntityType="Self.tblKategori" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tblMusteriler" EntityType="Self.tblMusteriler" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tblSatislar" EntityType="Self.tblSatislar" Schema="dbo" store:Type="Tables" />
@@ -202,7 +211,16 @@
             <End Role="tblSatislar" EntitySet="tblSatislars" />
           </AssociationSet>
           <FunctionImport Name="MarkaGetir" ReturnType="Collection(String)" />
+          <EntitySet Name="tblAdmin" EntityType="DBEntityUrunModel.tblAdmin" />
         </EntityContainer>
+        <EntityType Name="tblAdmin">
+          <Key>
+            <PropertyRef Name="adminID" />
+          </Key>
+          <Property Name="adminID" Type="Byte" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="adminAdSoyad" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="adminSifre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -253,6 +271,15 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <FunctionImportMapping FunctionImportName="MarkaGetir" FunctionName="DBEntityUrunModel.Store.MarkaGetir" />
+          <EntitySetMapping Name="tblAdmin">
+            <EntityTypeMapping TypeName="DBEntityUrunModel.tblAdmin">
+              <MappingFragment StoreEntitySet="tblAdmin">
+                <ScalarProperty Name="adminSifre" ColumnName="adminSifre" />
+                <ScalarProperty Name="adminAdSoyad" ColumnName="adminAdSoyad" />
+                <ScalarProperty Name="adminID" ColumnName="adminID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

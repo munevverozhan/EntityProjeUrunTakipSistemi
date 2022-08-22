@@ -31,6 +31,7 @@ namespace EntityProjeUrunTakipSistemi
         public virtual DbSet<tblMusteriler> tblMusterilers { get; set; }
         public virtual DbSet<tblSatislar> tblSatislars { get; set; }
         public virtual DbSet<tblUrunler> tblUrunlers { get; set; }
+        public virtual DbSet<tblAdmin> tblAdmin { get; set; }
     
         public virtual ObjectResult<string> MarkaGetir()
         {
